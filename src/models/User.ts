@@ -6,20 +6,23 @@ export interface User {
 	status: Status
 }
 
+const { Active, Stoped } = Status
+
 let userlistAutoId = 0
-export const userlist: User[] = [
-	{
-		name: 'tanaka',
-		status: Status.Active,
-	},
-	{
-		name: 'suzuki',
-		status: Status.Stoped,
-	},
-].map(r => ({ id: ++userlistAutoId, ...r }))
 
 export const create = (user: Omit<User, 'id'>): User => {
 	const { name, status } = user
 	const id = ++userlistAutoId
 	return { id, name, status }
 }
+
+export const userlist: User[] = [
+	{
+		name: 'tanaka',
+		status: Active,
+	},
+	{
+		name: 'suzuki',
+		status: Stoped,
+	},
+].map(create)
