@@ -6,9 +6,9 @@ import {
 	isOptional,
 	isFiniteNumber,
 } from 'generic-type-guard'
-import { Status } from '../models/Status'
-import { User } from '../models/User'
-import { InvalidParamsError } from '../Error'
+import { Status } from '~/models/Status'
+import { User } from '~/models/User'
+import { InvalidParamsError } from '~/Error'
 
 type NewUser = Omit<User, 'id'>
 const isNewUser: TypeGuard<NewUser> = new IsInterface()
