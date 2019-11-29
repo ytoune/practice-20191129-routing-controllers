@@ -2,8 +2,8 @@ import { JsonController } from 'routing-controllers'
 import { Get, Post, Delete, Put } from 'routing-controllers'
 import { OnUndefined } from 'routing-controllers'
 import { Body, Param } from 'routing-controllers'
-import { UserNotFoundError } from '../Error'
-import { userlist, create as createUser, User } from '../models/User'
+import { UserNotFoundError } from '~/Error'
+import { userlist, create as createUser, User } from '~/models/User'
 import { assertAsNewUser, assertAsUpdateUser } from './asserts'
 
 @JsonController('/users')
